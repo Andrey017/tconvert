@@ -1,3 +1,3 @@
 # tconvert
-Student: Andrey Gorbachev
+Student: Andrey Gorbachev;
 Group: IKBO-03-17
