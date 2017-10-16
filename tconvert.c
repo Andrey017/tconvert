@@ -3,14 +3,14 @@
 
 int main(int argc, char *argv[])
 {
-    float t=atof(argv[1]);
+    float t=atof(argv[1]);  /*Convert a number from a string*/
     int input, x, y, r, e, w, s;
     input = (int)(argv[2][0]);
-    if (argc==1)
+    if (argc==1)    /*If there are no parameters*/
     {
         printf("Few parameters");
     }
-    if (argc==2)
+    if (argc==2)    /*If only a number is given*/
     {
         printf("%.0fC", t);
         x=t+273;
@@ -30,9 +30,9 @@ int main(int argc, char *argv[])
         printf("\n%dC", w);
         printf("\n%dK", s);
     }
-    if (argc==3)
+    if (argc==3)    /*If a number is specified with a unit of measure*/
     {
-        switch ( input ) {
+        switch ( input ) {  /*Analysis by unit of measure*/
             case 'c':
                 x=t+273;
                 y=9*t/5+32;
