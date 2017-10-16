@@ -1,18 +1,16 @@
-//#include <QCoreApplication>
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
-    //QCoreApplication a(argc, argv);
-    float t=atof(argv[1]);      //Преобразуем из строки в число
+    float t=atof(argv[1]);
     int input, x, y, r, e, w, s;
     input = (int)(argv[2][0]);
-    if (argc==1)            //Если нет ни одного параметра
+    if (argc==1)
     {
         printf("Few parameters");
     }
-    if (argc==2)           //Если задано только число
+    if (argc==2)
     {
         printf("%.0fC", t);
         x=t+273;
@@ -32,9 +30,9 @@ int main(int argc, char *argv[])
         printf("\n%dC", w);
         printf("\n%dK", s);
     }
-    if (argc==3)           //Если задано число с единицей измерения
+    if (argc==3)
     {
-        switch ( input ) {          //Разбор по единице измерения
+        switch ( input ) {
             case 'c':
                 x=t+273;
                 y=9*t/5+32;
@@ -57,6 +55,5 @@ int main(int argc, char *argv[])
                 printf("-1");
         }
     }
-    //return a.exec();
     return 0;
 }
