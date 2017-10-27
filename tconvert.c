@@ -4,8 +4,8 @@
 int main(int argc, char *argv[])
 {
     float t=atof(argv[1]);  /*Convert a number from a string*/
-    int input, x, y, r, e, w, s;
-    input = (int)(argv[2][0]);
+    int x, y, r, e, w, s;
+    /*input = (int)(argv[2][0]);*/
     if (argc==1)    /*If there are no parameters*/
     {
         printf("Few parameters");
@@ -32,19 +32,22 @@ int main(int argc, char *argv[])
     }
     if (argc==3)    /*If a number is specified with a unit of measure*/
     {
-        switch ( input ) {  /*Analysis by unit of measure*/
+        switch ( *argv[2] ) {  /*Analysis by unit of measure*/
+            case 'C':
             case 'c':
                 x=t+273;
                 y=9*t/5+32;
                 printf("%dK", x);
                 printf("\n%dF", y);
             break;
+            case 'K':
             case 'k':
                 x=t-273;
                 y=9*(t-273)/5+32;
                 printf("%dC", x);
                 printf("\n%dF", y);
             break;
+            case 'F':
             case 'f':
                 x=5*(t-32)/9;
                 y=5*(t-32)/9+273;
@@ -52,7 +55,7 @@ int main(int argc, char *argv[])
                 printf("\n%dK", y);
             break;
             default:
-                printf("-1");
+            printf("-1");
         }
     }
     return 0;
