@@ -12,6 +12,11 @@ int main(int argc, char *argv[])
     }
     if (argc==2)    /*If only a number is given*/
     {
+        if(t<=-273.15 || t<=-459.7){
+            printf("ERROR");
+        }
+
+    else {
         printf("%.0fC", t);
         x=t+273;
         y=9*t/5+32;
@@ -29,30 +34,47 @@ int main(int argc, char *argv[])
         s=5*(t-32)/9+273;
         printf("\n%dC", w);
         printf("\n%dK", s);
+        }
     }
     if (argc==3)    /*If a number is specified with a unit of measure*/
+
     {
         switch ( *argv[2] ) {  /*Analysis by unit of measure*/
             case 'C':
             case 'c':
+            if (t<=-273.15){
+                printf("ERROR");
+            }
+            else{
                 x=t+273;
                 y=9*t/5+32;
                 printf("%dK", x);
                 printf("\n%dF", y);
+            }
             break;
             case 'K':
             case 'k':
+            if (t<=0){
+                printf("ERROR");
+            }
+            else{
                 x=t-273;
                 y=9*(t-273)/5+32;
                 printf("%dC", x);
                 printf("\n%dF", y);
+            }
             break;
             case 'F':
             case 'f':
+            if (t<=-459.7){
+                printf("ERROR");
+            }
+            else{
                 x=5*(t-32)/9;
                 y=5*(t-32)/9+273;
                 printf("%dC", x);
                 printf("\n%dK", y);
+            }
             break;
             default:
             printf("-1");
