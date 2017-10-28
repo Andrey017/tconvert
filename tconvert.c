@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     if (argc==2)    /*If only a number is given*/
     {
         if(t<=-273.15 || t<=-459.7){
-            printf("ERROR");
+            printf("There is no set temperature");
         }
 
     else {
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
             case 'C':
             case 'c':
             if (t<=-273.15){
-                printf("ERROR");
+                printf("There is no set temperature");
             }
             else{
                 x=t+273;
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
             case 'K':
             case 'k':
             if (t<=0){
-                printf("ERROR");
+                printf("There is no set temperature");
             }
             else{
                 x=t-273;
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
             case 'F':
             case 'f':
             if (t<=-459.7){
-                printf("ERROR");
+                printf("There is no set temperature");
             }
             else{
                 x=5*(t-32)/9;
